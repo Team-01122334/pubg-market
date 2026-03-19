@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG TM - İlan Ber</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #1e293b 0%, #080c14 100%); min-height: 100vh; color: white; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        input:focus { box-shadow: 0 0 20px rgba(234, 179, 8, 0.3); border-color: #eab308 !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="p-5 border-b border-slate-800 bg-[#0f172a]/90 sticky top-0 z-50 backdrop-blur-md text-center">
+        <h1 class="text-2xl font-black text-yellow-500 italic uppercase italic">PUBG <span class="text-white text-sm not-italic font-normal">TM MARKET</span></h1>
+    </nav>
+
+    <div class="max-w-xl mx-auto my-10 p-4">
+        <div class="glass-card rounded-[2.5rem] shadow-2xl p-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-black mb-2 uppercase tracking-tight">İlan Formy</h2>
+                <p class="text-slate-400 text-sm italic font-medium px-4">
+                    Hasabyňyzy satmak üçin aşakdaky maglumatlary dolduryň. Admin tarapyndan barlanyp tassyklanar.
+                </p>
+            </div>
+            
+            <form id="pubgForm" action="https://formspree.io/f/mnjglkkl" method="POST" class="space-y-5 text-left">
+                
+                <div>
+                    <label class="block text-[11px] font-black text-slate-500 uppercase mb-2 ml-2 tracking-widest">E-poçtaňyz (Siziň bilen habarlaşmak üçin)</label>
+                    <input type="email" name="email" required class="w-full bg-[#070b14] border border-slate-700 rounded-2xl p-4 focus:outline-none transition-all placeholder-slate-700" placeholder="mysal@mail.com">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-black text-slate-500 uppercase mb-2 ml-2 tracking-widest">Oyunçy ID (Karakter ID)</label>
+                    <input type="text" id="playerID" name="playerID" required pattern="[0-9]{5,12}" class="w-full bg-[#070b14] border border-slate-700 rounded-2xl p-4 focus:outline-none transition-all" placeholder="Mysal: 512345678">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[11px] font-black text-slate-500 uppercase mb-2 ml-2 tracking-widest text-blue-400">Oyunçy LvL</label>
+                        <input type="number" name="playerLevel" required min="1" max="100" class="w-full bg-[#070b14] border border-slate-700 rounded-2xl p-4 focus:outline-none" placeholder="1-100">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-black text-slate-500 uppercase mb-2 ml-2 tracking-widest text-green-400">Evo LvL</label>
+                        <input type="number" name="evoLevel" required min="1" max="100" class="w-full bg-[#070b14] border border-slate-700 rounded-2xl p-4 focus:outline-none" placeholder="1-100">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[11px] font-black text-slate-500 uppercase mb-2 ml-2 tracking-widest text-purple-400">Koleksýa LvL</label>
+                        <input type="number" name="collectionLevel" required min="1" max="101" class="w-full bg-[#070b14] border border-slate-700 rounded-2xl p-4 focus:outline-none" placeholder="1-101">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-black text-yellow-500 uppercase mb-2 ml-2 tracking-widest">Bahasy (TMT)</label>
+                        <input type="number" name="price" required min="0" class="w-full bg-[#070b14] border border-yellow-500/20 rounded-2xl p-4 focus:outline-none text-yellow-500 font-bold" placeholder="0 = Obmen">
+                    </div>
+                </div>
+
+                <div class="bg-yellow-500/5 border border-yellow-500/20 p-4 rounded-2xl text-[11px] text-yellow-200/70 leading-relaxed italic">
+                    🚨 <strong>ÜNS BERIŇ:</strong> yglan ýerleşdirmek töleglidir. Formy ugradanyňyzdan soňra töleg maglumatlary e-poçtaňyza ugradylar.
+                </div>
+
+                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-black py-5 rounded-2xl transition-all shadow-[0_10px_30px_rgba(234,179,8,0.2)] uppercase tracking-tighter text-lg active:scale-95">
+                    Yglany Ugrat
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pubgForm').addEventListener('submit', function(e) {
+            const btn = e.target.querySelector('button');
+            btn.innerText = "UGRADYLYAR...";
+            btn.style.opacity = "0.7";
+        });
+    </script>
+</body>
+</html>
+
